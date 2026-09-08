@@ -4,5 +4,13 @@
 
 [node name="Game" type="Node2D" unique_id=1443152786]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=275722116]
+layer = -100
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=447971090]
+offset_right = 1298.0
+offset_bottom = 1303.0
+color = Color(0.3375893, 0.5123952, 1, 1)
+
 [node name="Paddle" parent="." unique_id=87617237 instance=ExtResource("1_80nbo")]
-position = Vector2(663, 1189)
+position = Vector2(637, 1193)
