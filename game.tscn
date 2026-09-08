@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b7ofnx4gvwjqs"]
 
 [ext_resource type="PackedScene" uid="uid://bx6se8i20qa2f" path="res://paddle.tscn" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://wfvdayfmamo6" path="res://brick.tscn" id="2_e2o6t"]
 
 [node name="Game" type="Node2D" unique_id=1443152786]
 
@@ -14,3 +15,12 @@ color = Color(0.3375893, 0.5123952, 1, 1)
 
 [node name="Paddle" parent="." unique_id=87617237 instance=ExtResource("1_80nbo")]
 position = Vector2(637, 1193)
+
+[node name="Brick" parent="." unique_id=574279818 instance=ExtResource("2_e2o6t")]
+position = Vector2(249, 129)
+
+[node name="Brick2" parent="." unique_id=1579485274 instance=ExtResource("2_e2o6t")]
+position = Vector2(627, 344)
+
+[node name="Brick3" parent="." unique_id=205428217 instance=ExtResource("2_e2o6t")]
+position = Vector2(1050, 486)

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://wfvdayfmamo6"]
+
+[ext_resource type="Texture2D" uid="uid://cjouas5pt7m83" path="res://Sprites/YellowBrick.png" id="1_awxk8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ib2y"]
+size = Vector2(270, 90)
+
+[node name="Brick" type="StaticBody2D" unique_id=574279818]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1517966662]
+scale = Vector2(0.703125, 0.703125)
+texture = ExtResource("1_awxk8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=960843192]
+shape = SubResource("RectangleShape2D_8ib2y")
