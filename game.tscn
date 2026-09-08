@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bx6se8i20qa2f" path="res://paddle.tscn" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://wfvdayfmamo6" path="res://brick.tscn" id="2_e2o6t"]
+[ext_resource type="PackedScene" uid="uid://bdr1x3qp6c6o" path="res://ball.tscn" id="3_feb5d"]
 
 [node name="Game" type="Node2D" unique_id=1443152786]
 
@@ -24,3 +25,6 @@ position = Vector2(627, 344)
 
 [node name="Brick3" parent="." unique_id=205428217 instance=ExtResource("2_e2o6t")]
 position = Vector2(1050, 486)
+
+[node name="Ball" parent="." unique_id=468740584 instance=ExtResource("3_feb5d")]
+position = Vector2(644, 788)
