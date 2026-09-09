@@ -4,6 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://wfvdayfmamo6" path="res://brick.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://bdr1x3qp6c6o" path="res://ball.tscn" id="3_feb5d"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ib2y"]
+size = Vector2(20, 1336)
+
 [node name="Game" type="Node2D" unique_id=1443152786]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=275722116]
@@ -15,6 +18,7 @@ offset_bottom = 1303.0
 color = Color(0.3375893, 0.5123952, 1, 1)
 
 [node name="Paddle" parent="." unique_id=87617237 instance=ExtResource("1_80nbo")]
+unique_name_in_owner = true
 position = Vector2(637, 1193)
 
 [node name="Brick" parent="." unique_id=574279818 instance=ExtResource("2_e2o6t")]
@@ -27,4 +31,20 @@ position = Vector2(627, 344)
 position = Vector2(1050, 486)
 
 [node name="Ball" parent="." unique_id=468740584 instance=ExtResource("3_feb5d")]
+unique_name_in_owner = true
 position = Vector2(644, 788)
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=830554867]
+
+[node name="LeftWall" type="CollisionShape2D" parent="Walls" unique_id=1716215882]
+position = Vector2(-10, 666)
+shape = SubResource("RectangleShape2D_8ib2y")
+
+[node name="RightWall" type="CollisionShape2D" parent="Walls" unique_id=1196465127]
+position = Vector2(1290, 668)
+shape = SubResource("RectangleShape2D_8ib2y")
+
+[node name="TopWall" type="CollisionShape2D" parent="Walls" unique_id=915233038]
+position = Vector2(642, -9)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_8ib2y")

@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ib2y"]
 size = Vector2(248, 66)
 
-[node name="Paddle" type="CharacterBody2D" unique_id=87617237]
+[node name="Paddle" type="CharacterBody2D" unique_id=1912461563]
 script = ExtResource("1_tbytw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=703628683]
