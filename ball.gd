@@ -16,16 +16,16 @@ func getRandomStartDirection() -> Vector2:
 
 func _physics_process(delta: float) -> void:
 	# Move the ball
-	#velocity = direction * SPEED
-	position.x = clamp(position.x, 30, screen_size.x - 30)
-	position.y = clamp(position.y, 30, screen_size.y + 35)
+	var collision_info := move_and_collide(velocity * delta)
 	
 	# Bounce off paddle and bricks
-	var collision_info := move_and_collide(velocity * delta)
 	if collision_info:
-		#var collider := collision_info.get_collider()
+		var collider := collision_info.get_collider()
 		var normal := collision_info.get_normal()
 		velocity = velocity.bounce(normal) * BOUNCINESS
+		
+		if collider.is_in_group("bricks"):
+			collider.hit()
 	
 	if position.y > screen_size.y:
 		# Respawn ball

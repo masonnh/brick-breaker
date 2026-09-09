@@ -1,11 +1,13 @@
 [gd_scene format=3 uid="uid://wfvdayfmamo6"]
 
+[ext_resource type="Script" uid="uid://j5u3xi13bvl8" path="res://brick.gd" id="1_5p85m"]
 [ext_resource type="Texture2D" uid="uid://cjouas5pt7m83" path="res://Sprites/YellowBrick.png" id="1_awxk8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ib2y"]
 size = Vector2(270, 90)
 
-[node name="Brick" type="StaticBody2D" unique_id=1570001271]
+[node name="Brick" type="StaticBody2D" unique_id=1570001271 groups=["bricks"]]
+script = ExtResource("1_5p85m")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1517966662]
 scale = Vector2(0.703125, 0.703125)
