@@ -9,6 +9,4 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	velocity.x = direction * SPEED
-	velocity.y = 0
-	position += velocity * delta
-	position.x = clamp(position.x, 125, screen_size.x - 125)
+	move_and_collide(velocity * delta)
