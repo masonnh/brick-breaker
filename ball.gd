@@ -26,7 +26,8 @@ func _physics_process(delta: float) -> void:
 		
 		if collider.is_in_group("bricks"):
 			collider.hit()
+			%Score.increase_score(100)
 	
 	if position.y > screen_size.y:
-		# Respawn ball
-		pass
+		get_tree().paused = true
+		%GameOverScreen.visible = true

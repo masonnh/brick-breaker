@@ -3,16 +3,23 @@
 [ext_resource type="PackedScene" uid="uid://bx6se8i20qa2f" path="res://paddle.tscn" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://wfvdayfmamo6" path="res://brick.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://bdr1x3qp6c6o" path="res://ball.tscn" id="3_feb5d"]
+[ext_resource type="Script" uid="uid://bmyr5lnxjgdf" path="res://score.gd" id="4_fc0e3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ib2y"]
 size = Vector2(20, 1336)
 
+[sub_resource type="LabelSettings" id="LabelSettings_41u45"]
+font_size = 66
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ib2y"]
+font_size = 200
+
 [node name="Game" type="Node2D" unique_id=1443152786]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=275722116]
+[node name="Background" type="CanvasLayer" parent="." unique_id=275722116]
 layer = -100
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=447971090]
+[node name="ColorRect" type="ColorRect" parent="Background" unique_id=447971090]
 offset_right = 1298.0
 offset_bottom = 1303.0
 color = Color(0.3375893, 0.5123952, 1, 1)
@@ -48,3 +55,52 @@ shape = SubResource("RectangleShape2D_8ib2y")
 position = Vector2(642, -9)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_8ib2y")
+
+[node name="Score" type="CanvasLayer" parent="." unique_id=1744722195]
+unique_name_in_owner = true
+script = ExtResource("4_fc0e3")
+
+[node name="ScoreText" type="Label" parent="Score" unique_id=1405135202]
+unique_name_in_owner = true
+offset_left = 21.0
+offset_top = -1.0
+offset_right = 1259.0
+offset_bottom = 159.0
+text = "Score: 000"
+label_settings = SubResource("LabelSettings_41u45")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="VictoryScreen" type="CanvasLayer" parent="." unique_id=1535423183]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="VictoryScreen" unique_id=786685042]
+offset_right = 1300.0
+offset_bottom = 1323.0
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="Label" type="Label" parent="VictoryScreen" unique_id=725323055]
+offset_right = 1277.0
+offset_bottom = 1283.0
+text = "You Win!"
+label_settings = SubResource("LabelSettings_8ib2y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameOverScreen" type="CanvasLayer" parent="." unique_id=1016238841]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOverScreen" unique_id=1927234555]
+offset_right = 1300.0
+offset_bottom = 1323.0
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="Label" type="Label" parent="GameOverScreen" unique_id=543200495]
+offset_right = 1277.0
+offset_bottom = 1283.0
+text = "Game Over"
+label_settings = SubResource("LabelSettings_8ib2y")
+horizontal_alignment = 1
+vertical_alignment = 1
