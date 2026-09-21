@@ -4,6 +4,7 @@ const SPEED = 500
 const BOUNCINESS = 1.0
 var screen_size: Vector2
 var direction: Vector2 = Vector2(1, 1).normalized()
+var can_move := true
 
 func _ready() -> void:
 	direction = getRandomStartDirection()
@@ -15,6 +16,9 @@ func getRandomStartDirection() -> Vector2:
 	return dir.normalized()
 
 func _physics_process(delta: float) -> void:
+	if !can_move:
+		return
+		
 	# Move the ball
 	var collision_info := move_and_collide(velocity * delta)
 	
@@ -29,5 +33,4 @@ func _physics_process(delta: float) -> void:
 			%Score.increase_score(100)
 	
 	if position.y > screen_size.y:
-		get_tree().paused = true
 		%GameOverScreen.visible = true

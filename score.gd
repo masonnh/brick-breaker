@@ -9,4 +9,3 @@ func increase_score(inc_amount: int) -> void:
 	
 	if score >= max_score:
 		%VictoryScreen.visible = true
-		get_tree().paused = true

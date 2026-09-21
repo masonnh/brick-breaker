@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://b7ofnx4gvwjqs"]
 
+[ext_resource type="Script" uid="uid://xwj3bk4wg356" path="res://game.gd" id="1_7jktm"]
 [ext_resource type="PackedScene" uid="uid://bx6se8i20qa2f" path="res://paddle.tscn" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://wfvdayfmamo6" path="res://brick.tscn" id="2_e2o6t"]
 [ext_resource type="PackedScene" uid="uid://bdr1x3qp6c6o" path="res://ball.tscn" id="3_feb5d"]
@@ -15,6 +16,7 @@ font_size = 66
 font_size = 200
 
 [node name="Game" type="Node2D" unique_id=1443152786]
+script = ExtResource("1_7jktm")
 
 [node name="Background" type="CanvasLayer" parent="." unique_id=275722116]
 layer = -100
@@ -80,13 +82,24 @@ offset_right = 1300.0
 offset_bottom = 1323.0
 color = Color(0, 0, 0, 0.39215687)
 
-[node name="Label" type="Label" parent="VictoryScreen" unique_id=725323055]
+[node name="WinMessage" type="Label" parent="VictoryScreen" unique_id=725323055]
 offset_right = 1277.0
-offset_bottom = 1283.0
+offset_bottom = 1293.0
 text = "You Win!"
 label_settings = SubResource("LabelSettings_8ib2y")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="RestartMessage" type="Label" parent="VictoryScreen" unique_id=1367804369]
+custom_minimum_size = Vector2(1, 1)
+offset_top = 686.0
+offset_right = 1278.0
+offset_bottom = 1283.0
+text = "Press 'r' to restart"
+label_settings = SubResource("LabelSettings_8ib2y")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="GameOverScreen" type="CanvasLayer" parent="." unique_id=1016238841]
 unique_name_in_owner = true
@@ -97,10 +110,21 @@ offset_right = 1300.0
 offset_bottom = 1323.0
 color = Color(0, 0, 0, 0.39215687)
 
-[node name="Label" type="Label" parent="GameOverScreen" unique_id=543200495]
+[node name="LoseMessage" type="Label" parent="GameOverScreen" unique_id=543200495]
 offset_right = 1277.0
 offset_bottom = 1283.0
 text = "Game Over"
 label_settings = SubResource("LabelSettings_8ib2y")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="RestartMessage" type="Label" parent="GameOverScreen" unique_id=457865591]
+custom_minimum_size = Vector2(1, 1)
+offset_top = 686.0
+offset_right = 1278.0
+offset_bottom = 1283.0
+text = "Press 'r' to restart"
+label_settings = SubResource("LabelSettings_8ib2y")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
